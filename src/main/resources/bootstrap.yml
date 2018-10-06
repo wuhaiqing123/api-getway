@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: api-getway
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config
+      profile: dev
+  rabbitmq:
+    host: 192.168.9.129
+    port: 5672
+    username: guest
+    password: guest
+server:
+  port: 8087
+zuul:
+  routes:
+    config:
+      path: /myConfig/**
+      serverId: config
+management:
+  security:
+    enabled: false
